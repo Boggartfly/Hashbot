@@ -40,7 +40,8 @@ public class MainActivity extends Activity {
 		         if(resultantpath!=null)
 		         {	 Intent intent = new Intent(this, DigestUtil.class);
 		         	 Toast.makeText(this, "Success Path Obtained! It is:  "+resultantpath, Toast.LENGTH_SHORT).show();
-		         	 //startActivityForResult(intent,2);
+		         	intent.putExtra("path", resultantpath);
+		         	 startActivityForResult(intent,2);
 		         }
 		     }
 		     if (resultCode == RESULT_CANCELED) {    

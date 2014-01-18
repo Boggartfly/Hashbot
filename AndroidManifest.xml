@@ -31,6 +31,13 @@
            
            
         </activity>
+        <activity
+            android:name="code.laerstudios.hashcheck.DigestUtil"
+            android:label="@string/app_name" >
+            
+           
+           
+        </activity>
     </application>
 
 </manifest>

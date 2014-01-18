@@ -12,6 +12,7 @@ import android.os.Bundle;
 
 public class DigestUtil extends Activity {
 	 public static final int BUFFER_SIZE = 2048;
+	 String path="";
 	 String hashes="";
 	 public DigestUtil() {
 		// TODO Auto-generated constructor stub
@@ -39,10 +40,30 @@ public class DigestUtil extends Activity {
 		  }
 		  return sb.toString();
 		 }
+		 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+			  if (requestCode == 2) {
+
+			     if(resultCode == RESULT_OK){      
+			         String transferredpath=data.getStringExtra("path");
+			         if(transferredpath!=null)
+			         {	 path=transferredpath;
+			         	
+			         	
+			         }
+			     }
+			     if (resultCode == RESULT_CANCELED) {    
+			         //Write your code if there's no result
+			     }
+			  }
+			//onActivityResult
+		
+		}//onActivityResult
 		 @Override
 			protected void onCreate(Bundle savedInstanceState) {
 				super.onCreate(savedInstanceState);
-				File f = new File("/tmp/1.iso.gz");
+				
+				File f = new File(path);
 				  try {
 					String SHA_1=("SHA-1: " + getDigestString(new FileInputStream(f), "SHA-1"));
 					String SHA_256=("SHA-256: " + getDigestString(new FileInputStream(f), "SHA-256"));
@@ -56,7 +77,7 @@ public class DigestUtil extends Activity {
 					e.printStackTrace();
 				}
 				  Intent returnintent = new Intent(this, MainActivity.class);
-				  returnintent.putExtra("filepath", hashes);
+				  returnintent.putExtra("hashes", hashes);
 				  setResult(RESULT_OK,returnintent);
 				  finish();
 			}
