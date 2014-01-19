@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import code.laerstudios.hashbot.R;
 
 public class MainActivity extends Activity {
 

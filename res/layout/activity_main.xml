@@ -19,13 +19,13 @@
         android:text="@string/select_file"
         android:textSize="25sp" />
 
-     <TextView
-         android:id="@+id/text_id"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_alignParentTop="true"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="109dp"
-         android:text="@string/ophashes" />
+    <TextView
+        android:id="@+id/text_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="109dp"
+        android:text="@string/ophashes" />
 
 </RelativeLayout>

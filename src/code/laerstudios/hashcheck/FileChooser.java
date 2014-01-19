@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
+import code.laerstudios.hashbot.R;
 
 public class FileChooser extends ListActivity {
 
@@ -85,7 +86,7 @@ public class FileChooser extends ListActivity {
 		     Intent returnintent = new Intent(this, MainActivity.class);
 		     
 	         Toast.makeText(this, "File Clicked: "+o.getName(), Toast.LENGTH_SHORT).show();
-	        String path=o.getName();
+	        String path=o.getPath();
 	        returnintent.putExtra("filepath", path);
 	        setResult(RESULT_OK,returnintent);
 	         finish();
