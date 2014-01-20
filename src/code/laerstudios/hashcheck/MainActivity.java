@@ -38,10 +38,13 @@ public class MainActivity extends Activity {
 
 		     if(resultCode == RESULT_OK){      
 		         String resultantpath=data.getStringExtra("filepath");
+		         String name=data.getStringExtra("filename");
 		         if(resultantpath!=null)
-		         {	 Intent intent = new Intent(this, DigestUtil.class);
+		         {	 
+		        	 Intent intent = new Intent(this, DigestUtil.class);
 		         	 Toast.makeText(this, "Success Path Obtained! It is:  "+resultantpath, Toast.LENGTH_SHORT).show();
 		         	intent.putExtra("path", resultantpath);
+		         	intent.putExtra("filename", name);
 		         	 startActivityForResult(intent,2);
 		         }
 		     }
