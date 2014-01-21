@@ -10,6 +10,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,8 +19,8 @@ import android.util.Log;
 public class DigestUtil extends Activity {
 	 
 	private static final String TAG = "hashing";
-	 
-	 String hashes="";
+	 Context context;
+	  String hashes;
 	 public DigestUtil() {
 		// TODO Auto-generated constructor stub
 	}
@@ -54,7 +55,7 @@ public class DigestUtil extends Activity {
 		        
 				
 				Log.i(TAG, "Generated: " + output);
-				
+				hashes=output;
 				
 			} catch (IOException e) {
 				throw new RuntimeException("Unable to process file for MD5", e);
@@ -87,13 +88,16 @@ public class DigestUtil extends Activity {
 				super.onCreate(savedInstanceState);
 				Intent intent=getIntent();
 				String receivedpath=intent.getStringExtra("path");
-				String name=intent.getStringExtra("filename");
-				File filetobehashed = new File(name, receivedpath);
+				//String name=intent.getStringExtra("filename");
+				
+				File filetobehashed = new File(receivedpath);
 				hashSHA1(filetobehashed);
 				  Intent returnintent = new Intent(this, MainActivity.class);
 				  returnintent.putExtra("hashes", hashes);
 				  setResult(RESULT_OK,returnintent);
+				  startActivity(returnintent);
 				  finish();
+				 
 			}
 		
 }
