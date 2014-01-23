@@ -5,26 +5,26 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
-import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import code.laerstudios.hashbot.R;
+
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 public class DigestUtil extends Activity {
 	 
 	private static final String TAG = "hashing";
-	 Context context;
-	  String hashes;
+	
+	 public  String hashes;
 	 public DigestUtil() {
 		// TODO Auto-generated constructor stub
 	}
-	 public static void hashSHA1( File file) {
+	 public  void hashSHA1( File file) {
 		  	MessageDigest digest;
 			try {
 				digest = MessageDigest.getInstance("SHA1");
@@ -56,7 +56,11 @@ public class DigestUtil extends Activity {
 				
 				Log.i(TAG, "Generated: " + output);
 				hashes=output;
-				
+				Toast.makeText(this, "Hash  is:  "+output, Toast.LENGTH_SHORT).show();
+				Intent returnintent = new Intent(this, MainActivity.class);
+				  returnintent.putExtra("hashes", hashes);
+				  setResult(RESULT_OK,returnintent);
+				  finish();
 			} catch (IOException e) {
 				throw new RuntimeException("Unable to process file for MD5", e);
 			} finally {
@@ -68,35 +72,17 @@ public class DigestUtil extends Activity {
 			}
 		}
 	 
-		 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-			  if (requestCode == 2) {
-
-			     if(resultCode == RESULT_OK){      
-			        
-			       finish();  
-			     }
-			     if (resultCode == RESULT_CANCELED) {    
-			         //Write your code if there's no result
-			     }
-			  }
-			//onActivityResult
 		
-		}//onActivityResult
 		 @Override
 			protected void onCreate(Bundle savedInstanceState) {
 				super.onCreate(savedInstanceState);
+				setContentView(R.layout.activity_main);
 				Intent intent=getIntent();
 				String receivedpath=intent.getStringExtra("path");
-				//String name=intent.getStringExtra("filename");
-				
 				File filetobehashed = new File(receivedpath);
 				hashSHA1(filetobehashed);
-				  Intent returnintent = new Intent(this, MainActivity.class);
-				  returnintent.putExtra("hashes", hashes);
-				  setResult(RESULT_OK,returnintent);
-				  startActivity(returnintent);
-				  finish();
+				
+				  
 				 
 			}
 		

@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 		         if(resultantpath!=null)
 		         {	 
 		        	 Intent intent = new Intent(this, DigestUtil.class);
-		         	 Toast.makeText(this, "Success Path Obtained! It is:  "+resultantpath, Toast.LENGTH_SHORT).show();
+		         	 
 		         	intent.putExtra("path", resultantpath);
 		         	intent.putExtra("filename", name);
 		         	 startActivityForResult(intent,2);
@@ -58,9 +58,14 @@ public class MainActivity extends Activity {
 
 		 if(resultCode == RESULT_OK){      
 	         String hashes=data.getStringExtra("hashes");
-	         TextView txtView = (TextView) findViewById(R.id.text_id);
-	         txtView.setText(hashes);
+	         TextView hashtext=(TextView) findViewById(R.id.text_id);
+	        if(hashtext!=null)
+	         {
+	        	hashtext.setText("SHA-1 hash:-\n"+hashes);
 	     }
+	        else
+	        	Toast.makeText(this, "hashtext is null", Toast.LENGTH_SHORT).show();	
+		 }
 	     if (resultCode == RESULT_CANCELED) {    
 	         //Write your code if there's no result
 	     }
