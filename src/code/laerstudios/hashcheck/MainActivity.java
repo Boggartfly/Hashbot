@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import code.laerstudios.hashbot.R;
 
+@SuppressWarnings("unused")
 public class MainActivity extends Activity {
 
 	@Override
@@ -20,12 +21,13 @@ public class MainActivity extends Activity {
 
 	
 
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	*/
 	/** Called when the user clicks the Send button */
 	public void sendMessage(View view) {
 	    // Do something in response to button

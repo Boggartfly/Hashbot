@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+@SuppressWarnings("unused")
 public class DigestUtil extends Activity {
 	 
 	private static final String TAG = "hashing";
@@ -56,7 +57,7 @@ public class DigestUtil extends Activity {
 				
 				Log.i(TAG, "Generated: " + output);
 				hashes=output;
-				Toast.makeText(this, "Hash  is:  "+output, Toast.LENGTH_SHORT).show();
+				//Toast.makeText(this, "Hash  is:  "+output, Toast.LENGTH_SHORT).show();
 				Intent returnintent = new Intent(this, MainActivity.class);
 				  returnintent.putExtra("hashes", hashes);
 				  setResult(RESULT_OK,returnintent);
