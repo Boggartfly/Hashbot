@@ -224,14 +224,14 @@ containing a value of this type.
         public static final int icon_parentdir=0x7f02001e;
     }
     public static final class id {
-        public static final int TextView01=0x7f050008;
-        public static final int TextView02=0x7f050009;
-        public static final int action_settings=0x7f05000a;
+        public static final int TextView01=0x7f050007;
+        public static final int TextView02=0x7f050008;
         public static final int button1=0x7f050005;
         public static final int hybrid=0x7f050004;
-        public static final int instruct=0x7f050007;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
+        public static final int opengit=0x7f050009;
+        public static final int rate=0x7f05000a;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
         public static final int text_id=0x7f050006;
@@ -344,8 +344,10 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f060013;
         public static final int dlg_choosedir_title=0x7f06001c;
+        public static final int git=0x7f060020;
         public static final int instruction=0x7f06001f;
         public static final int ophashes=0x7f06001e;
+        public static final int rate=0x7f060021;
         public static final int select_file=0x7f06001d;
     }
     public static final class style {

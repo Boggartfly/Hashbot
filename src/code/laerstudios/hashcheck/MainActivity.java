@@ -1,15 +1,17 @@
 package code.laerstudios.hashcheck;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import code.laerstudios.hashbot.R;
 
-@SuppressWarnings("unused")
 public class MainActivity extends Activity {
 
 	@Override
@@ -21,13 +23,38 @@ public class MainActivity extends Activity {
 
 	
 
-	/*@Override
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		
 		return true;
 	}
-	*/
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.opengit:
+	            {
+	            	Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://boggartfly.github.io/Hashbot"));
+	            	startActivity(browserIntent);
+	            	return true;
+	            }
+	        case R.id.rate:
+	        { 
+	        	Uri uri = Uri.parse("market://details?id=" + getPackageName());
+	            Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
+	            try {
+	                startActivity(myAppLinkToMarket);
+	            } catch (ActivityNotFoundException e) {
+	                Toast.makeText(this, " unable to find market app", Toast.LENGTH_LONG).show();
+	            }
+	        return true;
+	        }
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 	/** Called when the user clicks the Send button */
 	public void sendMessage(View view) {
 	    // Do something in response to button
@@ -59,12 +86,17 @@ public class MainActivity extends Activity {
 	 if (requestCode == 2) {
 
 		 if(resultCode == RESULT_OK){      
-	         String hashes=data.getStringExtra("hashes");
+	         String sha1=data.getStringExtra("sha1");
+	         String sha256=data.getStringExtra("sha256");
+	         String sha512=data.getStringExtra("sha512");
+	         String md5=data.getStringExtra("md5");
+	          
 	         TextView hashtext=(TextView) findViewById(R.id.text_id);
 	        if(hashtext!=null)
 	         {
-	        	hashtext.setText("SHA-1 hash:-\n"+hashes);
-	     }
+hashtext.setText("SHA-1 hash:-\n"+sha1+"\n\n"+"SHA-256 hash:-\n"+sha256+"\n\n"+"SHA-512 hash:-\n"+sha512+"\n\n"+"MD5 hash:-\n"+md5);
+	    
+	         }
 	        else
 	        	Toast.makeText(this, "hashtext is null", Toast.LENGTH_SHORT).show();	
 		 }

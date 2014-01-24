@@ -85,7 +85,7 @@ public class FileChooser extends ListActivity {
 	     {
 		     Intent returnintent = new Intent(this, MainActivity.class);
 		     
-	         Toast.makeText(this, "File Clicked: "+o.getName(), Toast.LENGTH_SHORT).show();
+	         Toast.makeText(this, "File Selected: "+o.getName(), Toast.LENGTH_SHORT).show();
 	        String path=o.getPath();
 	        String name=o.getName();
 	        returnintent.putExtra("filepath", path);

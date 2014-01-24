@@ -6,4 +6,6 @@
     <string name="select_file">Select File</string>
     <string name="ophashes">File hashes appear here</string>
     <string name="instruction">Select file for Generating Hashes </string>
+    <string name="git">View on Github </string>
+    <string name="rate">Rate App</string>
 </resources>
