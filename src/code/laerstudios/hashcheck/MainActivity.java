@@ -8,20 +8,44 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+//import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import code.laerstudios.hashbot.R;
-
+//import com.google.android.gms.ads.*;
 public class MainActivity extends Activity {
-
+	// private AdView adView;
+	// private static String MY_AD_UNIT_ID="12465822";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		/*adView = new AdView(this);
+	    adView.setAdUnitId(MY_AD_UNIT_ID);
+	    adView.setAdSize(AdSize.BANNER);
+	    RelativeLayout layout = (RelativeLayout)findViewById(R.id.mainLayout);
+	    layout.addView(adView);
+	    AdRequest adRequest = new AdRequest.Builder().addTestDevice("0256E55BC81309E4").build();
+	    adView.loadAd(adRequest);*/
 	}
 
-	
+	 @Override
+	  public void onPause() {
+	  //  adView.pause();
+	    super.onPause();
+	  }
+
+	  @Override
+	  public void onResume() {
+	    super.onResume();
+	   // adView.resume();
+	  }
+
+	  @Override
+	  public void onDestroy() {
+	   // adView.destroy();
+	    super.onDestroy();
+	  }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

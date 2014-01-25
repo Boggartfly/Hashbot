@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Хэшбот</string>
+    <string name="action_settings">настройки</string>
+    <string name="dlg_choosedir_title">Выберите папку</string>
+    <string name="select_file">Выберите Файл</string>
+    <string name="ophashes">Хэши файлов появляются здесь</string>
+    <string name="instruction">Выберите файл для генерации хэшей </string>
+    <string name="git">Посмотреть на Github </string>
+    <string name="rate">Оценить App</string>
+    <string name="help">Помогите</string>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Hashbot</string>
+    <string name="action_settings">reglage</string>
+    <string name="dlg_choosedir_title">Choisissez la</string>
+    <string name="select_file">Sélectionnez Fichier</string>
+    <string name="ophashes">Hash du fichier apparaissent ici</string>
+    <string name="instruction">Sélectionnez le fichier pour générer Hashes</string>
+    <string name="git">Voir sur Github </string>
+    <string name="rate">App Évaluez</string>
+    <string name="help">Aider</string>
+</resources>

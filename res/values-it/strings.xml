@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Hashbot</string>
+    <string name="action_settings">collocamento</string>
+    <string name="dlg_choosedir_title">scegliere elenco</string>
+    <string name="select_file">Selezionare File</string>
+    <string name="ophashes">File hashes appear here</string>
+    <string name="instruction">Hash di file appaiono qui </string>
+    <string name="git">Visualizza su Github </string>
+    <string name="rate">Valutare app</string>
+    <string name="help">Aiuto</string>
+</resources>

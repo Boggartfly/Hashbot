@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Hashbot</string>
+    <string name="action_settings">إعدادات</string>
+    <string name="dlg_choosedir_title">اختيار الدليل</string>
+    <string name="select_file">اختر File</string>
+    <string name="ophashes">تجزئات الملف تظهر هنا</string>
+    <string name="instruction">حدد ملف لتوليد تجزئات</string>
+    <string name="git">عرض على جيثب </string>
+    <string name="rate">معدل التطبيق</string>
+    <string name="help">مساعدة</string>
+</resources>
