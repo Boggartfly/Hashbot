@@ -222,21 +222,23 @@ containing a value of this type.
         public static final int ic_plusone_standard_off_client=0x7f02001c;
         public static final int ic_plusone_tall_off_client=0x7f02001d;
         public static final int icon_parentdir=0x7f02001e;
+        public static final int up=0x7f02001f;
+        public static final int wait=0x7f020020;
     }
     public static final class id {
         public static final int TextView01=0x7f050008;
         public static final int TextView02=0x7f050009;
         public static final int button1=0x7f050006;
-        public static final int help=0x7f05000c;
         public static final int hybrid=0x7f050004;
         public static final int mainLayout=0x7f050005;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
-        public static final int opengit=0x7f05000a;
-        public static final int rate=0x7f05000b;
+        public static final int opengit=0x7f05000b;
+        public static final int rate=0x7f05000c;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
         public static final int text_id=0x7f050007;
+        public static final int upgrade=0x7f05000a;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
@@ -352,6 +354,7 @@ containing a value of this type.
         public static final int ophashes=0x7f06001e;
         public static final int rate=0x7f060021;
         public static final int select_file=0x7f06001d;
+        public static final int upgrade=0x7f060023;
     }
     public static final class style {
         /** 

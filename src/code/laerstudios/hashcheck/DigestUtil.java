@@ -11,12 +11,14 @@ import java.security.NoSuchAlgorithmException;
 import code.laerstudios.hashbot.R;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.ProgressBar;
 
-@SuppressWarnings("unused")
+
 public class DigestUtil extends Activity {
 	 
 	private static final String TAG = "hashing";
@@ -26,6 +28,10 @@ public class DigestUtil extends Activity {
 	 public String sha1;
 	 public String sha256;
 	 public String sha512;
+    // private ProgressDialog mProgress;
+    
+
+    
 	 public DigestUtil() {
 		// TODO Auto-generated constructor stub
 	}
@@ -47,7 +53,7 @@ public class DigestUtil extends Activity {
 				return;
 			}
 		 
-			byte[] buffer = new byte[8192];
+			byte[] buffer = new byte[32768];
 			int read;
 			try {
 				while ((read = is.read(buffer)) > 0) {
@@ -92,7 +98,7 @@ public class DigestUtil extends Activity {
 				return;
 			}
 		 
-			byte[] buffer = new byte[8192];
+			byte[] buffer = new byte[32768];
 			int read;
 			try {
 				while ((read = is.read(buffer)) > 0) {
@@ -136,7 +142,7 @@ public class DigestUtil extends Activity {
 				return;
 			}
 		 
-			byte[] buffer = new byte[8192];
+			byte[] buffer = new byte[32768];
 			int read;
 			try {
 				while ((read = is.read(buffer)) > 0) {
@@ -180,7 +186,7 @@ public class DigestUtil extends Activity {
 				return;
 			}
 		 
-			byte[] buffer = new byte[8192];
+			byte[] buffer = new byte[32768];
 			int read;
 			try {
 				while ((read = is.read(buffer)) > 0) {
@@ -212,14 +218,20 @@ public class DigestUtil extends Activity {
 			protected void onCreate(Bundle savedInstanceState) {
 				super.onCreate(savedInstanceState);
 				setContentView(R.layout.activity_main);
+			/*	mProgress = new ProgressDialog(this);
+				mProgress.setMessage("Calculating Hashes ");
+				mProgress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+				mProgress.setIndeterminate(true);
+				mProgress.show();*/
 				Intent intent=getIntent();
 				String receivedpath=intent.getStringExtra("path");
 				File filetobehashed = new File(receivedpath);
+				
 				hashSHA1(filetobehashed);
 				hashSHA256(filetobehashed);
 				hashSHA512(filetobehashed);
 				hashMD5(filetobehashed);
-				
+				//mProgress.setProgress(100);
 				Intent returnintent = new Intent(this, MainActivity.class);
 				  returnintent.putExtra("sha1", sha1);
 				  returnintent.putExtra("sha256", sha256);
@@ -227,6 +239,7 @@ public class DigestUtil extends Activity {
 				  returnintent.putExtra("md5", md5);
 				  
 				  setResult(RESULT_OK,returnintent);
+				 // mProgress.dismiss();
 				  finish(); 
 				 
 			}

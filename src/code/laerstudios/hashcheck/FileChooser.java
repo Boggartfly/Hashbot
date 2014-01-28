@@ -22,6 +22,8 @@ public class FileChooser extends ListActivity {
 	private File currentDir;
 	private FileArrayAdapter adapter;
 	static String EXTRA_MESSAGE="code.laerstudios.FileChooser";
+	
+	
 	 @Override
 	
 	     public void onCreate(Bundle savedInstanceState) {
@@ -29,9 +31,10 @@ public class FileChooser extends ListActivity {
 	         super.onCreate(savedInstanceState);
 	         currentDir = new File( Environment.getExternalStorageDirectory().getPath());
 	         fill(currentDir);
-	          
+	       
 	 
 	     }
+	
 	 private void fill(File f)
 	    {
 	        File[]dirs = f.listFiles();
@@ -91,7 +94,8 @@ public class FileChooser extends ListActivity {
 	        returnintent.putExtra("filepath", path);
 	        returnintent.putExtra("filename", name);
 	        setResult(RESULT_OK,returnintent);
-	         finish();
+	        
+	        finish();
 	     }
 
 

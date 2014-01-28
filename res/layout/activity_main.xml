@@ -7,8 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
-    tools:ignore="ExtraText"
-    android:id="@+id/mainLayout">"
+    android:id="@+id/mainLayout">
 
     <Button
         android:id="@+id/button1"
@@ -24,14 +23,13 @@
     <TextView
         android:id="@+id/text_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="88dp"
         android:text="@string/ophashes"
         android:textIsSelectable="true"
-        android:textSize="18sp" />
-
-"
+        android:textSize="15sp" />
 
 </RelativeLayout>
