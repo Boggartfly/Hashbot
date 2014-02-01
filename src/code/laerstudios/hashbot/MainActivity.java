@@ -4,9 +4,8 @@ package code.laerstudios.hashbot;
 
 
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.*;
+
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,16 +22,18 @@ import android.widget.Toast;
 import code.laerstudios.hashbot.R;
 public class MainActivity extends Activity {
 	 private AdView adView;
-	 private static String MY_AD_UNIT_ID="a152e534110e222";
+	 private static final String MY_AD_UNIT_ID="";
 	 private static final String TAG = "Adbuild";
-	
+	 private InterstitialAd interstitial;
 	 @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
        
-		
+		interstitial = new InterstitialAd(this);
+	    interstitial.setAdUnitId(MY_AD_UNIT_ID);
+	    
 		
 
 	                
@@ -42,10 +43,27 @@ public class MainActivity extends Activity {
 	    RelativeLayout layout = (RelativeLayout)findViewById(R.id.mainLayout);
 	    layout.addView(adView);
 	    AdRequest adRequest = new AdRequest.Builder().addTestDevice("E05D4CDEB622522AFBFB3FC12EA4677C").build();
+	    AdRequest adBannerRequest = new AdRequest.Builder().addTestDevice("E05D4CDEB622522AFBFB3FC12EA4677C").build();
 	    Log.v(TAG, "(ads) isTestDevice=" + adRequest.isTestDevice(this));
-	    adView.loadAd(adRequest);
+	    
+	    interstitial.loadAd(adRequest);
+	    adView.loadAd(adBannerRequest);
+	    interstitial.setAdListener(new AdListener() {
+	        @Override
+	        public void onAdLoaded() {
+	        	interstitial.show();
+	        }
+
+	        @Override
+	        public void onAdFailedToLoad(int errorCode) {
+	         
+	        }
+	      });
+	    
+	  
 	 }
 	
+
 	
 
 	@Override
@@ -149,7 +167,6 @@ hashtext.setText("SHA-1 hash:-\n"+sha1+"\n\n"+"SHA-256 hash:-\n"+sha256+"\n\n"+"
 	  }
 	//onActivityResult
 	}
+	
 
-	   
-
-}
+	  }

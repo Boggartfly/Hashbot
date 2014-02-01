@@ -28,7 +28,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="88dp"
-        android:text="@string/ophashes"
         android:textIsSelectable="true"
         android:textSize="15sp" />
 
