@@ -10,4 +10,125 @@
     <string name="rate">Rate App</string>
     <string name="help">Help</string>
     <string name="upgrade">Remove Ads</string>
+    <string name="ok">OK</string>
+    <string name="helpmessage">"
+        <u><b>Documentation Content</b></u>\n\n
+
+<b>About Hashbot</b> \n
+
+<p>Hashbot is an open source app used to confirm the authenticity and the reliability of a file that you 
+
+download on your device. This app uses the cryptographic functions to calculate and generate the 
+
+unique code for each file type available on your device. This code lets you verify whether the content of 
+
+the file is changed or tampered while downloading it. 
+
+Using this app, you can create codes for any file type, such as image files, documents, and videos. 
+
+After you receive the code, you must manually verify the code with the website, from where you have 
+
+downloaded the file.\n
+
+<b>Note</b>: <u>You can verify the code, only if the user who has uploaded the file, has entered the code of that 
+
+particular file while uploading the file on the website.</u>\n \n
+</p>
+<b>How to...</b>\n
+
+<b>To generate the unique for a file on your device:</b>\n
+
+1. Tap the<b> Select a File</b> button.\n
+
+The list of folders and files appear.\n
+
+2. To select the file, tap the appropriate file for which you want to create a code.
+
+The unique code appears.\n
+
+<b>To copy and save the unique code:</b>\n
+
+1) To select the code, touch and long press the code.\n
+
+2) Tap the <b>Copy to Clipboard</b> icon.\n
+
+3) Navigate to the app where you want to paste the code. For example, Messaging or Memo.\n
+
+4) In the new app, open the text window.\n
+
+5) Tap the Menu Key and tap Paste.\n
+
+The code is pasted in the text window.\n
+
+6) To save the code, tap the Save button.\n 
+
+\n<b>Frequently Ask Questions (FAQs)</b>\n\n
+
+<b>Q1: Can I use this app on any of Android device?</b>\n
+
+Ans: You can run this app on an Android device with Ice Cream Sandwich or above ie on Android 4.0.3 
+
+and higher versions.\n\n
+
+<b>Q2: Can I find the code for any file type?</b>\n
+
+Ans: Yes, you can find the code for any file type.\n\n
+
+<b>Q3: Is this code unique for a particular file?</b>\n
+
+Ans: Yes, this code is unique for a particular file. If you create many number copies of that particular file 
+
+then this code is same for every copy of that file.\n
+
+<b>Q4: Why does it take time to display the code for large files?</b>\n
+
+Ans: If your file is large, then the app takes time to read and process the large files. It takes 
+
+approximately 15 to 20 seconds.\n\n
+
+<b>Q5: How can I get rid of advertisements while using this app?</b>\n
+
+Ans: To remove advertisements, tap the Menu Key on your device, and then tap Remove Ads. You will 
+
+be then directed to the premium version of the app where you can buy it.\n\n
+
+<u><b>Glossary</b></u>\n
+
+<b>SHA1</b>\n
+
+A hashing algorithm defined in [FIPS180] that was developed by the National Institute of Standards and 
+
+Technology (NIST) and the National Security Agency (NSA).\n
+\n
+More at\n
+
+ <a href="https://en.wikipedia.org/wiki/SHA-1">Wikipedia </a>\n\n
+
+<b>MD5</b>\n
+
+<p>The MD5 message-digest algorithm is a widely used cryptographic hash function that produces a 128-bit 
+
+hash value. MD5 has been utilized in a wide variety of security applications, and is also commonly used 
+
+to check data integrity.\n
+</p>
+More at\n
+
+<a href="http://en.wikipedia.org/wiki/MD5_Hash">Wikipedia</a>\n\n
+
+<p><b>Cryptographic Hash Functions</b>\n\n
+A cryptographic hash function is a hash function that takes an arbitrary block of data and returns a fixed-size bit string, the cryptographic hash value, such that any (accidental or intentional) change to the data will (with very high probability) change the hash value. The data to be encoded are often called the message, and the hash value is sometimes called the message digest or simply digest.
+\n\nMore at Wikipedia.\n
+</p>
+<a href="http://en.m.wikipedia.org/wiki/Cryptographic_hash_function">Wikipedia</a>\n\n
+ Hashbot is subject to copyright. In no condition should Hashbot be misused or impersonated. Fake apps will not be tolerated. Unofficial builds are welcome subject to terms and conditions.\n
+ For our privacy policy 
+ <a href="https://www.dropbox.com/s/bqcv4b8orndb418/policy.html">Link to our Privacy Policy</a>
+ ©Laer Studios 2014-15\n
+
+Help documentation by \n
+<b>Shivanjalee Bildikar</b>
+<a href="mailto:shivanjalee.bildikar@gmail.com">shivanjalee.bildikar@gmail.com</a>
+"
+</string>
 </resources>
